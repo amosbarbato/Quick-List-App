@@ -1,7 +1,12 @@
+import { Form } from "./components/form"
+import { Header } from "./components/header"
+
 export default function App() {
   return (
-    <div>
-      <h1>teste</h1>
+    <div className="my-6">
+      <Header />
+
+      <Form />
     </div>
   )
 }
