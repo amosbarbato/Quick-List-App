@@ -26,6 +26,7 @@ export const Form = () => {
     if (itemTitle.trim() !== '') {
       await addItem({ title: itemTitle })
       setItemTitle('')
+      window.location.reload()
     }
   }
 

@@ -13,7 +13,18 @@ export const addItem = async (item: { title: string }) => {
     },
     body: JSON.stringify(item)
   })
-  return response.json()
+  // return await response.json()
+
+  // Verifica se há corpo de resposta
+  if (response.ok) {
+    try {
+      return await response.json(); // Tenta converter a resposta para JSON
+    } catch {
+      return null; // Retorna null caso o JSON seja inválido ou ausente
+    }
+  } else {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
 }
 
 export const deleteItem = async (id: number) => {
